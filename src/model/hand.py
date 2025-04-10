@@ -1,6 +1,7 @@
 from .suit import Suit
 from .rank import Rank
 from .card import Card
+from engine.evaluator import Evaluator
 
 class Hand:
 	'''
@@ -8,6 +9,7 @@ class Hand:
 	'''
 	def __init__(self, cards):
 		self.cards = cards
+		self.hand_rank = Evaluator.rank(hand)
 
 	@property
 	def is_flush(self):
@@ -41,6 +43,13 @@ class Hand:
 				return True
 
 		return max(ranks) - min(ranks) == len(ranks) - 1
+
+	@property
+	def hand_rank(self):
+		return self.hand_rank
+
+	def __lt__(self, other):
+		return self.score < other.score
 
 	def __repr__(self):
 		s = ''
