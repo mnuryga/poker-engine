@@ -1,8 +1,9 @@
 # poker-engine
 
-`todo: README.md`
-
 Backend engine for the mixed game poker project.  This engine will handle all functionality and will be accessed from the frontend via an API.
+
+## NOTE
+#### THERE IS A NONZERO CHANCE THIS GETS PORTED TO JAVA
 
 ## Current Design Guidelines
 
